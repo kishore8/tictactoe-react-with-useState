@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.board{
+  margin: auto;
+  text-align: center;
+}
+.rows{
+  height: 30rem;
+  width: 32rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.boxClass{
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.boxClass:hover{
+  background: yellow;
+  cursor: pointer;
+}
