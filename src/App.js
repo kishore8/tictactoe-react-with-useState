@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () =>{
     const [player_turn,setPlayer_turn] = useState('X')
@@ -7,8 +8,8 @@ const App = () =>{
    const clicked  = (index) => {
         if(!boxes[index]){
             boxes[index] = player_turn;
-        } else{
-           return alert('Cannot select this block');
+        } else {
+           return toast('Cannot select this block');
             
         }
         
@@ -35,11 +36,12 @@ const App = () =>{
             if(boxes[p1] == boxes[p2] && boxes[p2] == boxes[p3]  && boxes[p3] == boxes[p1]){
                 setBoxes(['','','','','','','','','']);
               
-                return alert(player_turn + ' won!');  
+                return toast(player_turn + ' won!');  
             }
 
             if(checkBoxesArefilledIn() == true){
-              return alert('Draw Match');
+              setBoxes(['','','','','','','','','']);
+              return toast("Draw Match");
             }
         }
         
@@ -57,7 +59,7 @@ const App = () =>{
 
     
      return(
-       <div class="board">
+       <div className="board">
          <h1>TIC TAC TOE</h1>
         <div className="rows">
            {
@@ -68,6 +70,7 @@ const App = () =>{
             ) 
        }
         </div>
+        <ToastContainer />
        </div>
        
         
